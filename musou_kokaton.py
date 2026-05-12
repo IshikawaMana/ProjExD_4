@@ -261,7 +261,7 @@ def main():
                     for i in NeoBeam(bird, 5).gen_beams():
                         beams.add(Beam(bird, i))
                 else:
-                    beams.add(Beam(bird))
+                    beams.add(Beam(bird, 0))
 
             #  sキーで防御壁発動（追加）
             if event.type == pg.KEYDOWN and event.key == pg.K_s:
