@@ -381,6 +381,7 @@ def main():
         if tmr % 200 == 0:  # 200フレームに1回，敵機を出現させる
             emys.add(Enemy())
 
+
         for emy in emys:
             # 敵機が停止状態に入ったら，intervalに応じて爆弾投下
             if emy.state == "stop" and tmr % emy.interval == 0:
@@ -399,7 +400,7 @@ def main():
         # ビームと衝突した爆弾リスト
         for bomb in pg.sprite.groupcollide(bombs, beams, True, True).keys():
             exps.add(Explosion(bomb, 50))  # 爆発エフェクト
-            score.value += 100  # 1点アップ
+            score.value += 1  # 1点アップ
         
 
         # 【追加機能4：こうかとんと爆弾の衝突判定を拡張】-----------
